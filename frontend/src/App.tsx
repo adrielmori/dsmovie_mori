@@ -1,5 +1,13 @@
+import Navbar from './components/Navbar';
+/* Componente React navBar: função do JS  */
+
 function App() {
-  return <h1>Página Pirncipal</h1>;
+  /* navebar para o HTML */ 
+
+  return (
+    <Navbar/>
+  );
 }
 
 export default App;
+/* Exportando o componente HTML - que na verdade é JSX; ponto chave da aplicaççao React */
