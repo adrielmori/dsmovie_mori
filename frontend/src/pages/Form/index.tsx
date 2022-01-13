@@ -1,4 +1,5 @@
-import './styles.css';
+import { Link } from "react-router-dom";
+import "./styles.css";
 /* Entrada de comando do usuário para classificar o conteúdo exibido */
 
 function Form() {
@@ -13,10 +14,16 @@ function Form() {
 
   return (
     <div className="dsmovie-form-container">
-      <img className="dsmovie-movie-card-image" src={movie.image} alt={movie.title} />
+      <img
+        className="dsmovie-movie-card-image"
+        src={movie.image}
+        alt={movie.title}
+      />
       <div className="dsmovie-card-bottom-container">
         <h3>{movie.title}</h3>
         <form className="dsmovie-form">
+          {" "}
+          {/* Comandos do usuário */}
           <div className="form-group dsmovie-form-group">
             <label htmlFor="email">Informe seu email</label>
             <input type="email" className="form-control" id="email" />
@@ -37,7 +44,9 @@ function Form() {
             </button>
           </div>
         </form>
-        <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+        <Link to="/"> {/* Volta para a página inicial da Listagem */}
+          <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
+        </Link>
       </div>
     </div>
   );
