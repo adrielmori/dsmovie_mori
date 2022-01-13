@@ -3,7 +3,7 @@ package com.mori.dsmovie;
 /**
  * Página principal para implementação das fontes 
  * em Java com as demais classes.
- * @author Adriel L. V. Mori
+ * @author Adriel L. V. Mori & Nélio Alves
  */
 
 import org.springframework.boot.SpringApplication;
