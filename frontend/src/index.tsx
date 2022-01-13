@@ -1,12 +1,14 @@
+/* Arquivo Principal do React */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
 
-ReactDOM.render(
+ReactDOM.render( /* Acessa o id="root" */
   <React.StrictMode>
-    <App />
+    <App /> {/* Renderiza o App.tsx */}
   </React.StrictMode>,
   document.getElementById('root')
 );

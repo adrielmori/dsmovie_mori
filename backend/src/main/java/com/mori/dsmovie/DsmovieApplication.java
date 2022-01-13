@@ -1,5 +1,11 @@
 package com.mori.dsmovie;
 
+/**
+ * Página principal para implementação das fontes 
+ * em Java com as demais classes.
+ * @author Adriel L. V. Mori
+ */
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
