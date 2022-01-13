@@ -12,7 +12,7 @@ function Navbar() {
             <div className="dsmovie-contact-container">
               <GithubIcon />
               {/* Esta em tag por conta de ser um componente react, com tag de HTML */}
-              <p className="dsmovie-contact-link">/devsuperior</p>
+              <p className="dsmovie-contact-link">/adrielmori</p>
             </div>
           </a>
           {/* Refenciando o link do Git */}

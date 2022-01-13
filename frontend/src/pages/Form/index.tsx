@@ -1,4 +1,5 @@
 import './styles.css';
+/* Entrada de comando do usuário para classificar o conteúdo exibido */
 
 function Form() {
   const movie = {
