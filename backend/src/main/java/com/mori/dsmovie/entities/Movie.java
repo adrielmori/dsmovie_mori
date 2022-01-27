@@ -18,6 +18,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_movie")
+
 public class Movie {
 
 	@Id
@@ -38,7 +39,6 @@ public class Movie {
 	}
 
 	public Movie(Long id, String title, Double score, Integer count, String image) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.score = score;
