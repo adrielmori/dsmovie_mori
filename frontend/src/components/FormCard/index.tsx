@@ -1,8 +1,9 @@
-import axios from "axios";
+import axios,{ AxiosRequestConfig } from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Movie } from "types/movie";
 import { BASE_URL } from "utils/requests";
+import { validateEmail } from "utils/validate";
 import "./styles.css";
 /* Entrada de comando do usuário para classificar o conteúdo exibido */
 
@@ -12,6 +13,8 @@ type Props = {
 
 function FormCard({ movieId }: Props) {
   //Para capturar a rota da página do filme escolhido
+
+  const navigate = useNavigate();//redirecionamento de rota
 
   //buscando filme a partir do Id
   const [movie, setMovie] = useState<Movie>();
@@ -23,6 +26,35 @@ function FormCard({ movieId }: Props) {
       });
   }, [movieId]);//Arguemento será a dependencia. Para encerrar a requisição
 
+  const handleSubmit = (event : React.FormEvent<HTMLFormElement>) => {//pegando dados do formulário
+
+    event.preventDefault();//empede que o formulário seja enviado
+    const email = (event.target as any).email.value;//acessando input do email
+    const score = (event.target as any).score.value;
+
+    if(!validateEmail(email)){
+      return;
+    }
+
+    //Requisição put para a API
+    const config: AxiosRequestConfig = {
+      baseURL: BASE_URL,
+      method: 'PUT',
+      url: '/scores',
+      data: {
+        email: email,
+        movieId: movieId,
+        score: score
+      }
+    }
+
+    axios(config).then(response => {
+      //console.log(response.data);
+      navigate("/"); //listagem
+    })
+
+  }
+
   return (
     <div className="dsmovie-form-container">
       <img
@@ -32,7 +64,7 @@ function FormCard({ movieId }: Props) {
       />
       <div className="dsmovie-card-bottom-container">
         <h3>{movie?.title}</h3>
-        <form className="dsmovie-form">
+        <form className="dsmovie-form" onSubmit={handleSubmit}>
           {" "}
           {/* Comandos do usuário */}
           <div className="form-group dsmovie-form-group">
