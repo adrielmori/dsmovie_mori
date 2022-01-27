@@ -33,18 +33,22 @@ function Listing() {
         const data = response.data as MoviePage;
         setPage(data);
       });
-  }, [pageNumber]);
+  }, [pageNumber]); //chama a função de mudar de página ele executa novamente com o mesmo valor, e ja busca a nova página
 
   //Redenrizando com os objetos do
 
+  const  handlePageChange = (newPageNumber : number) => {//muda o status da página; Atualiza o useState
+    setPageNumber(newPageNumber);
+    }
+
   return (
     <>
-      <Pagination />
+      <Pagination page={page} onChange={handlePageChange}/>{/*  */}
       {/* Aplicando as setas para que a paginação */}
 
       <div className="container">
         <div className="row">
-          {page.content.map(movie => (//acessando a lista de filmes
+          {page.content.map(movie => (//acessando a lista de filmes, e renderizando items da página
             <div key={movie.id} className="col-sm-6 col-log-4 col-xl-3 mb-3">
               <MovieCard movie={movie} />
             </div>
