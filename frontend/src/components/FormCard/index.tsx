@@ -17,8 +17,7 @@ function FormCard({ movieId }: Props) {
   const [movie, setMovie] = useState<Movie>();
 
   useEffect(() => {
-    axios
-      .get(`${BASE_URL}/movies/${movieId}`) //Requisição esecífica do Id informado
+    axios.get(`${BASE_URL}/movies/${movieId}`) //Requisição esecífica do Id informado
       .then(response => {
         setMovie(response.data); //objeto do corpo da resposta
       });

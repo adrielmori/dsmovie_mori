@@ -6,6 +6,7 @@ export type Movie = {
     image: string;
 }
 
+//definição do tipo
 export type MoviePage = {
     content: Movie[];
     last: boolean;

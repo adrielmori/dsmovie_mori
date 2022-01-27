@@ -27,8 +27,8 @@ function Listing() {
   useEffect(() => {
     //Para fazer uma requisição
     //Tem que passar a difinição Base Url definido no requisitos
-    axios
-      .get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id=title`)//sort=id: garante que a busca do filme será por Id, na mesma ordem
+    axios.get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`)//sort=id: garante que a busca do filme será por ordem de Id;
+    //sort=title garante que será em ordem afalbética do titulo;
       .then(response => {
         const data = response.data as MoviePage;
         setPage(data);
@@ -44,23 +44,12 @@ function Listing() {
 
       <div className="container">
         <div className="row">
-          {/* Defindo os breakpoints para ajustar
-           o compoente da página de modo impor limites para o tamanho da página - 6 colunas do 
-           Grid Strap,sendo que o total são 12; 
-
-                    Tabela de breakpoints
-                    X-Small	None	     <576px
-                    Small	   sm        ≥576px
-                    Medium	   md        ≥768px
-                    Large	   lg        ≥992px
-                    Extra large    xl    ≥1200px
-                    Extra extra large  xxl	≥1400px*/}
-
-          {page.content.map((movie) => (
+          {page.content.map(movie => (//acessando a lista de filmes
             <div key={movie.id} className="col-sm-6 col-log-4 col-xl-3 mb-3">
               <MovieCard movie={movie} />
             </div>
-          ))}
+          )
+          )}
           {/* Analisa filmes de forma individual */}
         </div>
       </div>

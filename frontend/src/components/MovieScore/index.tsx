@@ -1,10 +1,12 @@
-import MovieStar from "components/MovieStar";
+import MovieStars from "components/MovieStars";
 import './styles.css';
 
-function MovieScore() {
-  
-  const score=3.5;
-  const count=13; /* Contagem de avaliações */
+type Props = {
+  score: number;
+  count: number
+}
+
+function MovieScore({ score , count } : Props) {
 
     return (
     <div className="dsmovie-score-container">
@@ -13,7 +15,7 @@ function MovieScore() {
         {/* Condicional ternário: se anota maior que o, então irá aparecer
         se for false, mostra o traço - sem avaliação ainda. */}
       </p>
-      <MovieStar />
+      <MovieStars score={score}/>
       <p className="dsmovie-score-count">{count} avaliações</p>
     </div>
   );
