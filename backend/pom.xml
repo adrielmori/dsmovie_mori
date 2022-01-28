@@ -9,11 +9,11 @@
 		<version>2.6.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.OliveiraGusta</groupId>
-	<artifactId>Nova-Filmes</artifactId>
+	<groupId>com.mori</groupId>
+	<artifactId>dsmovie</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Nova-Filmes</name>
-	<description>Projeto criado na semana Spring React</description>
+	<name>dsmovie</name>
+	<description>Demo project for Spring Boot week of DevSuperior</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -59,7 +59,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>

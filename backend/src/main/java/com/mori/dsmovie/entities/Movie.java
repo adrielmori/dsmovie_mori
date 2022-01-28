@@ -25,7 +25,7 @@ public class Movie {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private Double score; // Tipo que são classe: aíusculo para aplicações em banco de dados
+	private Double score; // Tipo que são classe: maíusculo para aplicações em banco de dados
 	private Integer count;
 	private String image;
 
